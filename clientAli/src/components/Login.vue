@@ -84,13 +84,27 @@ export default {
   methods: {
     login: function () {
       const vm = this
-      if (vm.password === 'ali') {
-        this.$router.push({ path: '/' })
-      } else {
-        // show alert on a component
-        vm.showAlert = true
-        vm.message = 'Login failed'
+      const payload = {
+        email: this.email,
+        password: this.password
       }
+      this.$store.dispatch('logInUser', payload)
+        .then(() => {
+          if (vm.isLoggedIn) {
+            this.$router.push({ path: '/' })
+          } else {
+          // show alert on a component
+            vm.showAlert = true
+            vm.message = 'Login failed'
+          }
+        })
+      // if (vm.password === 'ali') {
+      //   this.$router.push({ path: '/' })
+      // } else {
+      //   // show alert on a component
+      //   vm.showAlert = true
+      //   vm.message = 'Login failed'
+      // }
     },
     cancel: function () {
       const vm = this
