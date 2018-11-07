@@ -18,13 +18,15 @@ const getters = {
 
 const actions = {
   async logInUser ({ commit }, payload) {
-    await Vue.axios.get('/user/email' + payload.email)
+    console.log(Vue.axios.baseURL)
+    await Vue.axios.get('/user/email/' + payload.email)
       .then((resp) => {
         let data = resp.data
         if (data && data.length > 0) {
           console.log(data)
           const pwd = data[0].password
           if (payload.password === pwd) {
+            console.log('password check passed')
             const user = data[0]
             payload.email = user.email
             payload.userId = user._id
@@ -44,11 +46,13 @@ const actions = {
 
 const mutations = {
   logInUser (state, payload) {
-    state.isLoggedIn = payload.isLoggedIn
+    state.isLoggedIn = true
     state.email = payload.email
     state.first = payload.first
     state.last = payload.last
     state.userId = payload.userId
+    console.log('state filled with user info')
+    console.log(state)
   },
   loginError (state) {
     state.isLoggedIn = false

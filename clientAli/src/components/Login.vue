@@ -4,7 +4,6 @@
         <v-flex xs12>
             <h2>Login to Globomantics</h2>
         </v-flex>
-        <v-space></v-space>
         <v-flex xs12 sm6 offset-sm3>
             <v-text-field
                 label="Email"
@@ -81,6 +80,14 @@ export default {
       ]
     }
   },
+  computed: {
+    isLoggedIn: function () {
+      return this.$store.getters.isLoggedIn
+    },
+    loginError: function () {
+      return this.$stire.getters.loginError
+    }
+  },
   methods: {
     login: function () {
       const vm = this
@@ -90,6 +97,7 @@ export default {
       }
       this.$store.dispatch('logInUser', payload)
         .then(() => {
+          console.log(vm.isLoggedIn)
           if (vm.isLoggedIn) {
             this.$router.push({ path: '/' })
           } else {

@@ -4,7 +4,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import About from '@/components/About'
-import Ali from '@/components/Ali'
+import LoginNew from '@/components/LoginNew'
 
 Vue.use(Router)
 
@@ -32,9 +32,9 @@ export default new Router({
       component: About
     },
     {
-      path: '/ali',
-      name: 'Ali',
-      component: Ali
+      path: '/loginnew',
+      name: 'LoginNew',
+      component: LoginNew
     },
     {
       path: '*',

@@ -33,6 +33,28 @@ const actions = {
   getTransactionsByMonth ({ commit, state, rootState }, payload) {
     // Make API call... Pass in selected Month and Year + UserId in hearder...
     // Once transaction data is retrieved... commit the mutation to update state...
+    console.log('came at getTransactionsByMonth')
+    console.log(rootState.user.userId)
+    if (rootState.user.userId === null) {
+      console.log('came at right place')
+      rootState.user = {
+        isLoggedInNew: true,
+        email: rootState.usernew.email,
+        first: rootState.usernew.first,
+        last: rootState.usernew.last,
+        userId: rootState.usernew.userId
+      }
+      console.log('rootstate.user')
+      console.log(rootState.user)
+    }
+
+    console.log('state')
+    console.log(state)
+    console.log('rootState')
+    console.log(rootState)
+    console.log('rootState.user.userId')
+    console.log(rootState.user.userId)
+
     Vue.axios.get('/transaction/' + state.currentYear + '/' + state.currentMonth,
       {headers: { 'userId': rootState.user.userId }})
       .then((resp) => {

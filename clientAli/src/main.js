@@ -5,12 +5,17 @@ import Vuetify from 'vuetify'
 import App from './App'
 import router from './router'
 import store from './store'
+import axios from 'axios'
+
 Vue.use(Vuetify)
 
 // Vuex store for use
 Vue.use(store)
 Vue.config.productionTip = false
 
+Vue.axios = Vue.prototype.$http = axios.create({
+  baseURL: 'http://localhost:8081/api'
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
