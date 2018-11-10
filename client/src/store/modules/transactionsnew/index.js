@@ -1,9 +1,9 @@
 import actions from './actions'
-import getters from './actions'
+import getters from './getters'
 import mutations from './mutations'
 
 const state = {
-  months: [
+  monthsNew: [
     { name: 'Zero', abrev: 'ZZZ', index: 0 },
     { name: 'January', abrev: 'Jan', index: 1 },
     { name: 'February', abrev: 'Feb', index: 2 },
@@ -18,11 +18,11 @@ const state = {
     { name: 'November', abrev: 'Nov', index: 11 },
     { name: 'December', abrev: 'Dec', index: 12 }
   ],
-  currentMonth: 5,
-  currentYear: 2018,
-  transactions: [],
-  balanceCharges: 0,
-  balanceDeposits: 0
+  currentMonthNew: 5,
+  currentYearNew: 2018,
+  transactionsNew: [],
+  balanceChargesNew: 0,
+  balanceDepositsNew: 0
 }
 
 export default {

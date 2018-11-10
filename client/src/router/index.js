@@ -5,6 +5,7 @@ import Home from '@/components/Home'
 import Login from '@/components/Login'
 import About from '@/components/About'
 import LoginNew from '@/components/LoginNew'
+import AppHome from '@/components/AppHome'
 
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export default new Router({
     {
       path: '*',
       redirect: '/'
+    },
+    {
+      path: '/apphome',
+      name: 'AppHome',
+      component: AppHome
     }
   ]
 })

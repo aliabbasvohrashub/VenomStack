@@ -7,7 +7,14 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  theme: {
+    primary: '#b71c1c',
+    secondary: '#b0bec5',
+    accent: '#8c9eff',
+    error: '#b71c1c'
+  }
+})
 
 // Vuex store for use
 Vue.use(store)

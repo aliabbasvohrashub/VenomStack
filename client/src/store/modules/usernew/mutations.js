@@ -1,6 +1,6 @@
 
 const logInUserNew = (state, payload) => {
-  console.log('came in here')
+  console.log('should come in mutation loginUserNew second time')
   state.isLoggedInNew = true
   state.email = payload.email
   state.first = payload.first

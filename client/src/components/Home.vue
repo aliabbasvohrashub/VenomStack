@@ -85,7 +85,8 @@
     <v-content>
       <v-container fluid>
         <v-layout>
-            <transactions></transactions>
+            <!-- <transactions></transactions> -->
+            <transactions-new></transactions-new>
         </v-layout>
       </v-container>
     </v-content>
@@ -95,6 +96,7 @@
 
 <script>
 import Transactions from './Transactions.vue'
+import TransactionsNew from './TransactionsNew'
 import EditTransaction from './EditTransactions.vue'
 import HeaderActions from './HeaderActions.vue'
 
@@ -103,7 +105,8 @@ export default {
   components: {
     Transactions,
     EditTransaction,
-    HeaderActions
+    HeaderActions,
+    TransactionsNew
   },
   computed: {
     isLoggedIn () {
@@ -127,6 +130,7 @@ export default {
   }),
   methods: {
     menuAction: function () {
+      console.log('menuAction called')
       // TODO
     },
     showProfile: function () {

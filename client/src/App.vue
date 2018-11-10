@@ -1,10 +1,10 @@
 <template>
-  <!-- <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div> -->
   <v-app id="app">
-    <router-view />
+    <div>
+      <tool-bar></tool-bar>
+      <router-view></router-view>
+      <app-footer></app-footer>
+    </div>
   </v-app>
 </template>
 

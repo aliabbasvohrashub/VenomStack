@@ -2,6 +2,7 @@ import Vue from 'vue'
 import bcrypt from 'bcryptjs'
 
 const loginUserNew = async ({ commit }, payload) => {
+  console.log('should come in action loginUserNew first')
   await Vue.axios.get('/user/email/' + payload.email)
     .then((resp) => {
       let data = resp.data
