@@ -8,6 +8,8 @@ import AppLogin from '@/components/AppLogin'
 import Breakfast from '@/components/Breakfast'
 import Meat from '@/components/Meat'
 import Sushi from '@/components/Sushi'
+import About from '@/components/About'
+import Contact from '@/components/Contact'
 
 Vue.use(Router)
 
@@ -16,6 +18,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'AppHome',
+      component: AppHome
+    },
+    {
+      path: '/home',
       name: 'Home',
       component: Home
     },
@@ -48,6 +55,16 @@ export default new Router({
       path: '/sushi',
       name: 'Sushi',
       component: Sushi
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
     }
   ]
 })
